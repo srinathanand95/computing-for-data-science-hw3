@@ -12,15 +12,6 @@
 # where <light> is the value of the parameter light.
 #
 
-def car_at_light(light):
-    if light == 'green':
-        return 'go'
-    elif light == 'yellow':
-        return 'wait'
-    elif light == 'red':
-        return 'stop'
-    else:
-        raise ValueError(f'Undefined instruction for color: {light}')
 
 # 2)
 # Create a function named "safe_subtract" that
@@ -31,13 +22,6 @@ def car_at_light(light):
 # If there is any other reason why it fails show the problem 
 # 
 
-def safe_subtract(x, y):
-    try:
-        return x - y
-    except TypeError:
-        return None
-    except Exception as e:
-        print(f'Subtraction failed: {e}')
     
 
 # 3)
@@ -50,18 +34,6 @@ def safe_subtract(x, y):
 # Name the second function "retrieve_age_lbyl" and follow lbyl
 
 
-def retrieve_age_eafp(dic):
-    try:
-        return 2026 - dic['birth']
-    except KeyError:
-        print('This dictionary does not have birth data!')
-        
-    
-def retrieve_age_lbyl(dic):
-    if 'birth' in dic:
-        return 2026 - dic['birth']
-    else:
-        print('This dictionary does not have birth data!')
 # 4)
 # Imagine you have a file named data.csv. 
 # Create a function called "read_data" that takes the path to the file as an argument
