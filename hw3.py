@@ -74,26 +74,61 @@ def retrieve_age_lbyl(dic):
 # Find the possible logical errors (bugs) 
 # in the code blocks below. Comment in each of them
 # which logical errors did you find and correct them
+
 ### (a)
+# total_double_sum = 0           # original code
+# for elem in [10, 5, 2]:
+    # double = elem * 2
+    # total_double_sum += elem
+
+# Logical error: The original code was adding the original element (elem) to total_double_sum instead of the 
+# doubled value (double). The corrected line is now adding double to total_double_sum.
+
 total_double_sum = 0
 for elem in [10, 5, 2]:
     double = elem * 2
-    total_double_sum += elem
+    total_double_sum += double  # Adds elem*2 to total_double_sum, totalling 34
 
+#=======================================================================
 ### (b)
+# strings = ''                    # original code
+# for string in ['I', 'am', 'Groot']:
+    # strings = string+"_"+string
+
+# Logical error: We are overwriting the variable 'strings' in each iteration of the loop, so at the end of the loop, 
+# 'strings' will only contain the last value. If we want to concatenate all the strings, we should use '+=' 
+# instead of '='.
+
+# Logical error: We are concatenating the string with itself, which may not be the intended behavior. If we want to 
+# concatenate the strings with an underscore, we should use 'strings += string + "_"' instead.
+
 strings = ''
 for string in ['I', 'am', 'Groot']:
-    strings = string+"_"+string
+    strings += string + "_"       # writes "I_am_Groot_"
 
-### (c) Careful!
-j=10
+#=======================================================================
+### (c)                           # orginal code
+# j=10
+# while j > 0:
+#    j += 1
+
+# Logical error: We are creating an infinite loop, because j is always increasing and will never be <= 0.
+# If we wish to create a countdown loop, we should decrement j instead of incrementing it.
+
+j = 10
 while j > 0:
-   j += 1
+    # print(j)                    # not necessary, but it will print the countdown in case we wanted to see it
+    j -= 1                        # stops the countdown when j is 0
 
+#=======================================================================
 ### (d)
-productory = 0
+# productory = 0                  # original code
+# for elem in [1, 5, 25]:
+    # productory *= elem
+
+# Logical error: The variable 'productory' is initialized to 0, which will always result in a 0 regardless of the 
+# elements in the list for the product. If we can initialize 'productory' to 1 instead of 0 to get the correct product.
+
+productory = 1
 for elem in [1, 5, 25]:
-    productory *= elem
-
-
-
+    productory *= elem           # multiplies each element in the list to get the product, resulting in 125
