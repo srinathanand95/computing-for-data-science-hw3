@@ -70,7 +70,7 @@ def retrieve_age_lbyl(dic):
 
 def read_data(path):
     try:
-        with open(path, 'r') as file:   # can also use pandas to read .csv file.
+        with open(path, 'r') as file:   # can also use pandas to read .csv files.
             data = file.read()
             return data
     except FileNotFoundError:
