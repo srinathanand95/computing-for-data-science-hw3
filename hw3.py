@@ -67,8 +67,14 @@ def retrieve_age_lbyl(dic):
 # Create a function called "read_data" that takes the path to the file as an argument
 # and reads the file making sure to use to handle the fact
 # that it might not exist. 
-#
 
+def read_data(path):
+    try:
+        with open(path, 'r') as file:   # can also use pandas to read the .csv file.
+            data = file.read()
+            return data
+    except FileNotFoundError:
+        return f'File not found: {path}. Make sure the file exists and you are providing the correct path.'
 
 # 5) Squash some bugs! 
 # Find the possible logical errors (bugs) 
